@@ -1,0 +1,15 @@
+{
+  "yoctohubs": [
+    "usb"
+  ],
+  "zones": {
+    "A": {"descr": "Tiago desk", "up_relay": "zone_a_up", "down_relay": "zone_a_down"},
+    "B": {"descr": "MM desk", "up_relay": "zone_b_up", "down_relay": "zone_b_down"},
+    "C": {"descr": "Seb desk", "up_relay": "zone_c_up", "down_relay": "zone_c_down"},
+    "D": {"descr": "MV desk", "up_relay": "zone_d_up", "down_relay": "zone_d_down"},
+    "E": {"descr": "Entrance", "up_relay": "zone_e_up", "down_relay": "zone_e_down"}
+  },
+  "co2": {
+    "limit": 800
+  }
+}
