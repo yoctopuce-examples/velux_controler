@@ -11,26 +11,26 @@ from yoctopuce.yocto_carbondioxide import *
 
 class VeluxZone(object):
 
-    def __init__(self, zonename, descr, hwid_up, hwid_down):
+    def __init__(self, zonename, descr, hwid_close, hwid_open):
         self.name = zonename
         self._desription = descr
-        self._upRelay = YRelay.FindRelay(hwid_up)
-        self._downRelay = YRelay.FindRelay(hwid_down)
+        self._closeRelay = YRelay.FindRelay(hwid_close)
+        self._openRelay = YRelay.FindRelay(hwid_open)
 
     def open(self):
-        self._downRelay.pulse(200)
+        self._openRelay.pulse(200)
 
     def close(self):
-        self._upRelay.pulse(200)
+        self._closeRelay.pulse(200)
 
     def check_relays(self):
-        if not self._upRelay.isOnline():
-            sys.exit("Relay %s for zone %s is not online" % (self._desription, self._upRelay.describe()))
-        if not self._downRelay.isOnline():
-            sys.exit("Relay %s for zone %s is not online" % (self._desription, self._downRelay.describe()))
+        if not self._closeRelay.isOnline():
+            sys.exit("Relay %s for zone %s is not online" % (self._desription, self._closeRelay.describe()))
+        if not self._openRelay.isOnline():
+            sys.exit("Relay %s for zone %s is not online" % (self._desription, self._openRelay.describe()))
 
     def bind(self):
-        self._upRelay.pulse(1300)
+        self._closeRelay.pulse(1300)
         pass
 
 
@@ -66,7 +66,7 @@ class VeluxControler(object):
         for zone_name in config['zones']:
             z = config['zones'][zone_name]
             if zone_name in targets or include_all_zone:
-                zone = VeluxZone(zone_name, z['descr'], z['up_relay'], z['down_relay'])
+                zone = VeluxZone(zone_name, z['descr'], z['close_relay'], z['open_relay'])
                 zone.check_relays()
                 self.zones.append(zone)
 

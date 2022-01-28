@@ -3,11 +3,11 @@
     "usb"
   ],
   "zones": {
-    "A": {"descr": "Tiago desk", "up_relay": "zone_a_up", "down_relay": "zone_a_down"},
-    "B": {"descr": "MM desk", "up_relay": "zone_b_up", "down_relay": "zone_b_down"},
-    "C": {"descr": "Seb desk", "up_relay": "zone_c_up", "down_relay": "zone_c_down"},
-    "D": {"descr": "MV desk", "up_relay": "zone_d_up", "down_relay": "zone_d_down"},
-    "E": {"descr": "Entrance", "up_relay": "zone_e_up", "down_relay": "zone_e_down"}
+    "A": {"descr": "desk_1", "open_relay": "zone_a_open", "close_relay": "zone_a_close"},
+    "B": {"descr": "desk_2", "open_relay": "zone_b_open", "close_relay": "zone_b_close"},
+    "C": {"descr": "desk_3", "open_relay": "zone_c_open", "close_relay": "zone_c_close"},
+    "D": {"descr": "desk_4", "open_relay": "zone_d_open", "close_relay": "zone_d_close"},
+    "E": {"descr": "entrance", "open_relay": "zone_e_open", "close_relay": "zone_e_close"}
   },
   "co2": {
     "limit": 800
