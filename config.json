@@ -1,15 +1,43 @@
 {
   "yoctohubs": [
-    "usb"
+    "usb",
+    "192.168.1.14"
   ],
   "zones": {
-    "A": {"descr": "desk_1", "open_relay": "zone_a_open", "close_relay": "zone_a_close"},
-    "B": {"descr": "desk_2", "open_relay": "zone_b_open", "close_relay": "zone_b_close"},
-    "C": {"descr": "desk_3", "open_relay": "zone_c_open", "close_relay": "zone_c_close"},
-    "D": {"descr": "desk_4", "open_relay": "zone_d_open", "close_relay": "zone_d_close"},
-    "E": {"descr": "entrance", "open_relay": "zone_e_open", "close_relay": "zone_e_close"}
+    "A": {"descr": "Desk A", "open_relay": "zone_a_open", "close_relay": "zone_a_close"},
+    "B": {"descr": "Desk B", "open_relay": "zone_b_open", "close_relay": "zone_b_close"},
+    "C": {"descr": "Desk C", "open_relay": "zone_c_open", "close_relay": "zone_c_close"},
+    "D": {"descr": "Desk D", "open_relay": "zone_d_open", "close_relay": "zone_d_close"},
+    "E": {"descr": "Entrance", "open_relay": "zone_e_open", "close_relay": "zone_e_close"}
   },
   "co2": {
-    "limit": 800
-  }
+    "sensor_id": "YCO2MK02-1234.carbonDioxide",
+    "max_open_time": 300,
+    "open_limit": 800,
+    "close_limit": 700
+  },  
+  "temperature_sensor": "METEOMK2-1234.temperature",
+  "display": ["YD128X64-1D105E.display"],
+  "buttons": [
+    {
+      "hwid": "YD128X64-1234.anButton1",
+      "action": "close",
+      "zones": ["A", "B", "C", "D", "E"]
+    },
+    {
+      "hwid": "YD128X64-1234.anButton2",
+      "action": "open",
+      "zones": ["A", "B", "C", "D", "E"]
+    },
+    {
+      "hwid": "YD128X64-1234.anButton1",
+      "action": "close",
+      "zones": ["A", "B", "C"]
+    },
+    {
+      "hwid": "YD128X64-1234.anButton2",
+      "action": "open",
+      "zones": ["A", "B", "C"]
+    }
+  ]
 }
